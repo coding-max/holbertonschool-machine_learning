@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """529#0"""
 
+from math import prod
 import numpy as np
 
 
@@ -25,5 +26,7 @@ class Poisson:
         k = int(k)
         e = 2.7182818285
         λ = self.lambtha
+        factorial_k = prod(map(lambda i: i, range(1, k + 1)))
+        
+        return (e ** -λ) * (λ ** k) / factorial_k
 
-        return np.power(e, - λ) * np.power(λ, k) / np.math.factorial(k)
