@@ -9,7 +9,7 @@ class Poisson:
         """Sets the instance attribute lambtha"""
         e = 2.7182818285
         if data is None:
-            if lambtha < 0:
+            if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
             self.lambtha = float(lambtha)
         else:
