@@ -27,6 +27,5 @@ class Poisson:
         e = 2.7182818285
         λ = self.lambtha
         factorial_k = prod(map(lambda i: i, range(1, k + 1)))
-        
-        return (e ** -λ) * (λ ** k) / factorial_k
 
+        return (e ** -λ) * (λ ** k) / factorial_k
