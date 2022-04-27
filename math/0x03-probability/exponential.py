@@ -22,7 +22,12 @@ class Exponential:
         """calculates the value of the PDF for a given time period"""
         e = 2.7182818285
         λ = self.lambtha
-
         if x < 0:
             return 0
         return λ * (e ** (-λ * x))
+
+    def cdf(self, x):
+        """calculates the value of the CDF for a given time period"""
+        e = 2.7182818285
+        λ = self.lambtha
+        return 1 - e ** (-λ * x)
