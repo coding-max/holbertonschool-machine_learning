@@ -9,8 +9,6 @@ class Poisson:
 
     def __init__(self, data=None, lambtha=1.):
         """sets the instance attribute lambtha"""
-        self.e = 2.7182818285
-
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
@@ -25,4 +23,7 @@ class Poisson:
     def pmf(self, k):
         """calculates the value of the PMF for a given number of 'successes'"""
         k = int(k)
-        return np.power(self.e, - (self.lambtha)) * np.power(self.lambtha, k) / np.math.factorial(k)
+        e = 2.7182818285
+        λ = self.lambtha
+
+        return np.power(e, - λ) * np.power(λ, k) / np.math.factorial(k)
