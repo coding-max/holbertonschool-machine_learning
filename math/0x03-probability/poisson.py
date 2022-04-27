@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 """529#0"""
 
-from math import prod
-import numpy as np
-
 
 class Poisson:
     """represents a poisson distribution"""
@@ -26,6 +23,13 @@ class Poisson:
         k = int(k)
         e = 2.7182818285
         λ = self.lambtha
-        factorial_k = prod(map(lambda i: i, range(1, k + 1)))
 
-        return (e ** -λ) * (λ ** k) / factorial_k
+        return (e ** -λ) * (λ ** k) / self.factorial(k)
+
+    def factorial(self, k):
+        """calculates the factorial of k"""
+        factorial = 1
+
+        for n in range(1, k + 1):
+            factorial = factorial * n
+        return factorial
