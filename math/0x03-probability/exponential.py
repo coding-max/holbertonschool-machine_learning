@@ -23,4 +23,6 @@ class Exponential:
         e = 2.7182818285
         λ = self.lambtha
 
+        if x <= 0:
+            return 0
         return λ * (e ** (-λ * x))
