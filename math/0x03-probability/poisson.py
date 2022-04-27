@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """529#0"""
 
+import numpy as np
+
 
 class Poisson:
     """represents a poisson distribution"""
 
     def __init__(self, data=None, lambtha=1.):
-        """Sets the instance attribute lambtha"""
-        e = 2.7182818285
+        """sets the instance attribute lambtha"""
+        self.e = 2.7182818285
+
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
@@ -18,3 +21,8 @@ class Poisson:
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
             self.lambtha = sum(data) / len(data)
+
+    def pmf(self, k):
+        """calculates the value of the PMF for a given number of 'successes'"""
+        k = int(k)
+        return np.power(self.e, - (self.lambtha)) * np.power(self.lambtha, k) / np.math.factorial(k)
