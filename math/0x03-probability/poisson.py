@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""529#0"""
+"""529#0-2"""
 
 
 class Poisson:
@@ -23,7 +23,6 @@ class Poisson:
         k = int(k)
         e = 2.7182818285
         λ = self.lambtha
-
         if k <= 0:
             return 0
         return (e ** -λ) * (λ ** k) / self.factorial(k)
@@ -33,7 +32,6 @@ class Poisson:
         k = int(k)
         e = 2.7182818285
         λ = self.lambtha
-
         if k <= 0:
             return 0
         cdf = 0
@@ -44,7 +42,6 @@ class Poisson:
     def factorial(self, k):
         """calculates the factorial of k"""
         factorial = 1
-
         for n in range(1, k + 1):
             factorial = factorial * n
         return factorial
