@@ -19,7 +19,7 @@ class DeepNeuralNetwork:
            any(layer < 1 for layer in layers)):
             raise TypeError('layers must be a list of positive integers')
         self.L = len(layers)
-        self.cache = {}
+        self.cache = self.weights = {}
         for i in range(self.L):
             w = 'W' + str(i + 1)
             b = 'b' + str(i + 1)
