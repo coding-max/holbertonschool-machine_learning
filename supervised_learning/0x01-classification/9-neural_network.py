@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""475 - NeuralNetwork"""
+"""475#9 - Privatize NeuralNetwork"""
 
 import numpy as np
 
