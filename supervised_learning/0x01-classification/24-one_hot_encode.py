@@ -10,5 +10,5 @@ def one_hot_encode(Y, classes):
         return None
     try:
         return np.identity(classes)[Y].T
-    except:
+    except Exception:
         return None
