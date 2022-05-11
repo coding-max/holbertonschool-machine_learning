@@ -8,5 +8,7 @@ def one_hot_encode(Y, classes):
     """converts a numeric label vector into a one-hot matrix"""
     if not isinstance(Y, np.ndarray):
         return None
-    matrix = np.eye(classes)[Y].T
-    return matrix if not None else None
+    try:
+        return np.identity(classes)[Y].T
+    except:
+        return None
