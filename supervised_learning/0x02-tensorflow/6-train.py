@@ -33,6 +33,7 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes, activations,
 
     with tf.Session() as session:
         session.run(init)
+
         for i in range(iterations + 1):
             t_data = {x: X_train, y: Y_train}
             training_cost = session.run(loss, feed_dict=t_data)
@@ -40,12 +41,15 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes, activations,
             v_data = {x: X_valid, y: Y_valid}
             validation_cost = session.run(loss, feed_dict=v_data)
             validation_accuracy = session.run(accuracy, feed_dict=v_data)
+
             if i % 100 == 0 or i == iterations:
                 print("After {} iterations:".format(i))
                 print("\tTraining Cost: {}".format(training_cost))
                 print("\tTraining Accuracy: {}".format(training_accuracy))
                 print("\tValidation Cost: {}".format(validation_cost))
                 print("\tValidation Accuracy: {}".format(validation_accuracy))
+
             if i < iterations:
                 session.run(training, feed_dict=t_data)
+
         return saver.save(session, save_path)
